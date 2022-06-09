@@ -1,5 +1,4 @@
 package com.it_academy;
-//ndfhnfdnhd
 
 public class Main {
     public static void main(String[] args) {

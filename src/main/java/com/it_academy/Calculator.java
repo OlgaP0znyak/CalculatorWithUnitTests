@@ -3,7 +3,7 @@ package com.it_academy;
 public class Calculator {
     double calculate(double number1, double number2, char operation) {
         double result = 0;
-        switch(operation) {
+        switch (operation) {
             case '+':
                 result = MathOperation.add(number1, number2);
                 break;
