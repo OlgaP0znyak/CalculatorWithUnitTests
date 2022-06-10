@@ -19,6 +19,12 @@ public class Main {
 
         Calculator calculator = new Calculator();
         result = calculator.calculate(number1, number2, operation);
-        System.out.println(number1 + " " + operation + " " + number2 + " = " + result);
+
+        Output output = new Output();
+        output.printFormattedNumber(number1);
+        System.out.print(" " + operation + " ");
+        output.printFormattedNumber(number2);
+        System.out.print(" = ");
+        output.printFormattedNumber(result);
     }
 }
