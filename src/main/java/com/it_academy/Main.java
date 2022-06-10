@@ -14,8 +14,10 @@ public class Main {
         operation = CalculatorInputReader.getOperation();
         number2 = CalculatorInputReader.getNumber();
 
-        while (operation == '/' && number2 == 0)
+        while (operation == '/' && number2 == 0) {
+            System.out.println("Ошибка. Деление на ноль невозможно. Повторите ввод делителя");
             number2 = CalculatorInputReader.getNumber();
+        }
 
         Calculator calculator = new Calculator();
         result = calculator.calculate(number1, number2, operation);
@@ -23,7 +25,7 @@ public class Main {
         Output output = new Output();
         output.printFormattedNumber(number1);
         System.out.print(" " + operation + " ");
-       if (number2 < 0) {
+        if (number2 < 0) {
             System.out.print("(");
             output.printFormattedNumber(number2);
             System.out.print(")");
