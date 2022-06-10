@@ -8,6 +8,8 @@ public class Main {
         double result;
         System.out.println("***КАЛЬКУЛЯТОР***");
         System.out.println();
+        System.out.println("Для выхода из программы введите \"exit\".");
+        System.out.println();
         number1 = CalculatorInputReader.getNumber();
         operation = CalculatorInputReader.getOperation();
         number2 = CalculatorInputReader.getNumber();
