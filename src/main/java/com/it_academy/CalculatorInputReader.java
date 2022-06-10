@@ -11,11 +11,15 @@ public class CalculatorInputReader {
         while (true) {
             System.out.println("Введите число: ");
             String inputtedLine = scanner.nextLine();
-            try {
-                number = Double.parseDouble(inputtedLine);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка. Необходимо вводить целые числа или десятичные дроби, где целая часть отделяется точкой. Повторите ввод.");
+            if (inputtedLine.equals("exit")){
+                System.exit(0);}
+            else {
+                try {
+                    number = Double.parseDouble(inputtedLine);
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Ошибка. Необходимо вводить целые числа или десятичные дроби, где целая часть отделяется точкой. Повторите ввод.");
+                }
             }
         }
         return number;
@@ -28,11 +32,15 @@ public class CalculatorInputReader {
         while (true) {
             System.out.println("Введите операцию (+, -, *, /): ");
             String inputtedLine = scanner.nextLine();
-            if (!inputtedLine.equals("+") && !inputtedLine.equals("-") && !inputtedLine.equals("*") && !inputtedLine.equals("/")) {
-                System.out.println("Ошибка. Повторите ввод.");
-            } else {
-                operation = inputtedLine.charAt(0);
-                break;
+            if (inputtedLine.equals("exit")){
+                System.exit(0);}
+            else {
+                if (!inputtedLine.equals("+") && !inputtedLine.equals("-") && !inputtedLine.equals("*") && !inputtedLine.equals("/")) {
+                    System.out.println("Ошибка. Повторите ввод.");
+                } else {
+                    operation = inputtedLine.charAt(0);
+                    break;
+                }
             }
         }
         return operation;
