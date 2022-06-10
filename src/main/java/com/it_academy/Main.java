@@ -23,7 +23,12 @@ public class Main {
         Output output = new Output();
         output.printFormattedNumber(number1);
         System.out.print(" " + operation + " ");
-        output.printFormattedNumber(number2);
+       /* if (number2 < 0) {
+            System.out.print("(");
+            output.printFormattedNumber(number2);
+            System.out.print(")");
+        } else*/
+            output.printFormattedNumber(number2);
         System.out.print(" = ");
         output.printFormattedNumber(result);
     }

@@ -11,9 +11,9 @@ public class CalculatorInputReader {
         while (true) {
             System.out.println("Введите число: ");
             String inputtedLine = scanner.nextLine();
-            if (inputtedLine.equals("exit")){
-                System.exit(0);}
-            else {
+            if (inputtedLine.equals("exit")) {
+                System.exit(0);
+            } else {
                 try {
                     number = Double.parseDouble(inputtedLine);
                     break;
@@ -32,9 +32,9 @@ public class CalculatorInputReader {
         while (true) {
             System.out.println("Введите операцию (+, -, *, /): ");
             String inputtedLine = scanner.nextLine();
-            if (inputtedLine.equals("exit")){
-                System.exit(0);}
-            else {
+            if (inputtedLine.equals("exit")) {
+                System.exit(0);
+            } else {
                 if (!inputtedLine.equals("+") && !inputtedLine.equals("-") && !inputtedLine.equals("*") && !inputtedLine.equals("/")) {
                     System.out.println("Ошибка. Повторите ввод.");
                 } else {
