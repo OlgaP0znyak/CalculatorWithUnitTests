@@ -6,6 +6,7 @@ public class Main {
         double number2;
         char operation;
         double result;
+
         System.out.println("***КАЛЬКУЛЯТОР***");
         System.out.println();
         System.out.println("Для выхода из программы введите \"exit\".");
@@ -14,7 +15,7 @@ public class Main {
         operation = CalculatorInputReader.getOperation();
         number2 = CalculatorInputReader.getNumber();
 
-        while (operation == '/' && number2 == 0) {
+        while (Checking.checkIsDivisionByZero(operation, number2)) {
             System.out.println("Ошибка. Деление на ноль невозможно. Повторите ввод делителя");
             number2 = CalculatorInputReader.getNumber();
         }
@@ -23,15 +24,6 @@ public class Main {
         result = calculator.calculate(number1, number2, operation);
 
         Output output = new Output();
-        output.printFormattedNumber(number1);
-        System.out.print(" " + operation + " ");
-        if (number2 < 0) {
-            System.out.print("(");
-            output.printFormattedNumber(number2);
-            System.out.print(")");
-        } else
-            output.printFormattedNumber(number2);
-        System.out.print(" = ");
-        output.printFormattedNumber(result);
+        output.printResultOfCalculating(number1, number2, operation, result);
     }
 }
